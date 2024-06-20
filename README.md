@@ -54,5 +54,6 @@ timedatectl
 HQ-R chronyc clients  
 HQ-SRV apt-get install -y docker-{ce,compose}  
 systemctl enable --now docker.service
-
+apt-get install samba -y
+systemctl enable --now smb
 
