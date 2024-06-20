@@ -33,5 +33,26 @@ HQ-SRV vim /etc/openssh/sshd_config
 CLI-HQ-R alterator 100.64.2.2:22 > 172.16.1.2:2222  
 ssh user@172.16.1.2  
 100.64.1.1 alterator внутренние сети 100.64.1.2 no ssh  
+HQ-R apt-get install chrony -y  
+vim /etc/chrony.conf  
+server 127.0.0.1 iburst prefer  
+hwtimestamp *  
+local stratum 5  
+allow 0/0  
+allow ::/0  
+systemctl enable --now chronyd  
+timedatectl list-timezones (no +3UTC)  
+timedatectl set-timezone Europe/Moscow  
+HQ-SRV apt-get install chrony -y  
+vim /etc/chrony.conf  
+server 172.16.1.1 iburst prefer  
+server fd00:161::1 iburst  
+systemctl enable --now chronyd  
+timedatectl set-timezone Europe/Moscow  
+HQ-SRV chronyc sources  
+timedatectl  
+HQ-R chronyc clients  
+HQ-SRV apt-get install -y docker-{ce,compose}  
+systemctl enable --now docker.service
 
 
