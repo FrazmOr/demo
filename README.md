@@ -1,3 +1,6 @@
+apt-get install -y dhcp-server  
+/etc/sysconfig/dhcpd DHCPDARGS=ens34
+cp ~/demo/dhcpd.conf /etc/dhcp/dhcpd.conf
 apt-get install frr -y  
 systemctl enable --now frr  
 vim /etc/frr/daemons  
