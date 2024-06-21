@@ -23,7 +23,7 @@ ospf6 router-id 1.1.1.1
 curl -L -o C:\iperf3.jpg "https://clck.ru/3BNDj5"  
 Скорость отправки и приема данных - 2.22 Гбит/с  
 За 10 секунд было передано 2.58 Гбит данных  
-curl -L -o C:\iperf3.jpg "https://clck.ru/3BNTUA"  
+curl -L -o C:\L3scheme.jpg "https://clck.ru/3BNTUA"  
 apt-get install proxmox-backup-{server,client} -y  
 systemctl enable --now proxmox-backup-proxy.service и все остальные  
 apt-get install kernel-modules-zfs-std-def -y  
